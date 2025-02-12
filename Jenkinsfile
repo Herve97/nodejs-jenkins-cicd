@@ -7,6 +7,12 @@ pipeline {
       }
     }
 
+    stage('Test Docker') {
+      steps {
+        sh 'docker --version'
+      }
+    }
+
     stage("test"){
       agent {
         docker {
