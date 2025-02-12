@@ -14,11 +14,6 @@ pipeline {
     }
 
     stage("test"){
-      agent {
-        docker {
-          image 'node:16' // Use a Node.js image
-        }
-      }
       steps{
         sh 'npm install'
         sh 'npm test'
