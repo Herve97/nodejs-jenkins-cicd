@@ -8,6 +8,11 @@ pipeline {
     }
 
     stage("test"){
+      agent {
+        docker {
+          image 'node:20-alpine' // Use a Node.js image
+        }
+      }
       steps{
         sh 'npm install'
         sh 'npm test'
